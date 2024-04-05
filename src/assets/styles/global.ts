@@ -25,7 +25,6 @@ export const GlobalStyleProvider = styled.createGlobalStyle`
 	body,
 	#root {
 		width: 100%;
-		height: 100%;
 		background-color: #222831;
 		color: #dddddd;
 	}
@@ -52,7 +51,28 @@ export const GlobalStyleProvider = styled.createGlobalStyle`
 		background: transparent;
 	}
 
-	section {
-		min-height: 400px;
+	.face1 {
+		transform: rotateY(0deg) translateZ(-764px);
+	}
+	.face2 {
+		transform: rotateY(45deg) translateZ(-764px);
+	}
+	.face3 {
+		transform: rotateY(90deg) translateZ(-764px);
+	}
+	.face4 {
+		transform: rotateY(135deg) translateZ(-764px);
+	}
+	.face5 {
+		transform: rotateY(180deg) translateZ(-764px);
+	}
+	.face6 {
+		transform: rotateY(225deg) translateZ(-764px);
+	}
+	.face7 {
+		transform: rotateY(270deg) translateZ(-764px);
+	}
+	.face8 {
+		transform: rotateY(315deg) translateZ(-764px);
 	}
 `;
