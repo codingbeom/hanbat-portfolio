@@ -108,7 +108,7 @@ Error generating stack: `+o.message+`
 	&:hover {
 		animation: ${Cv} 0.5s ease infinite alternate;
 	}
-`,Nv=[{href:"/",name:"Home"},{href:"/story",name:"Story"}];function Rv({children:e}){const t=Xn(),[n,r]=_.useState(!0),l=i=>t.pathname===i,o=()=>{window.scrollY>60?r(!1):r(!0)};return _.useEffect(()=>{if(t.pathname==="/story")return document.addEventListener("scroll",o),()=>{document.removeEventListener("scroll",o)}},[]),T.jsxs(Ev,{children:[T.jsx(_v,{$visible:n,children:T.jsx("ul",{children:Nv.map((i,u)=>T.jsx("li",{children:T.jsx(Pv,{to:i.href,$active:l(i.href),children:i.name})},u))})}),e]})}const Tv=xs`
+`,Nv=[{href:"/",name:"Home"},{href:"/story",name:"Story"}];function Rv({children:e}){const t=Xn(),[n,r]=_.useState(!0),l=i=>t.pathname===i,o=()=>{window.scrollY>60?r(!1):r(!0)};return _.useEffect(()=>{if(console.log(t.pathname),console.log("/hanbat-portfolio"),t.pathname==="/story")return document.addEventListener("scroll",o),()=>{document.removeEventListener("scroll",o)}},[]),T.jsxs(Ev,{children:[T.jsx(_v,{$visible:n,children:T.jsx("ul",{children:Nv.map((i,u)=>T.jsx("li",{children:T.jsx(Pv,{to:i.href,$active:l(i.href),children:i.name})},u))})}),e]})}const Tv=xs`
 		0% {
 		transform: rotateY(0deg);
 		}
@@ -256,7 +256,7 @@ Error generating stack: `+o.message+`
 		width: 100%;
 		vertical-align: bottom;
 	}
-`;function Wv(){return T.jsxs(Av,{children:[T.jsx(Fv,{}),dn.map((e,t)=>T.jsx(Uv,{id:e.href.replace(/^#/,""),children:T.jsxs(Bv,{children:[T.jsx("h2",{children:e.name}),T.jsx("img",{src:e.img})]})}))]})}function Vv(){return T.jsx(T.Fragment,{children:T.jsx(Rv,{children:T.jsxs(f0,{children:[T.jsx(fr,{index:!0,path:"/",element:Ov()}),T.jsx(fr,{path:"/story",element:Wv()}),T.jsx(fr,{path:"/about",element:$v()}),T.jsx(fr,{path:"/contact",element:Iv()})]})})})}const Hv={createGlobalStyle:xv},Qv=Hv.createGlobalStyle`
+`;function Wv(){return T.jsxs(Av,{children:[T.jsx(Fv,{}),dn.map((e,t)=>T.jsx(Uv,{id:e.href.replace(/^#/,""),children:T.jsxs(Bv,{children:[T.jsx("h2",{children:e.name}),T.jsx("img",{src:e.img})]})},t))]})}function Vv(){return T.jsx(T.Fragment,{children:T.jsx(Rv,{children:T.jsxs(f0,{children:[T.jsx(fr,{index:!0,path:"/",element:Ov()}),T.jsx(fr,{path:"/story",element:Wv()}),T.jsx(fr,{path:"/about",element:$v()}),T.jsx(fr,{path:"/contact",element:Iv()})]})})})}const Hv={createGlobalStyle:xv},Qv=Hv.createGlobalStyle`
 	*,
 	*::after,
 	*::before {
