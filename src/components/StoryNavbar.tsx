@@ -8,7 +8,7 @@ const hoverAnimation = keyframes`
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-5px);
+        transform: translateY(-2.5px);
     }
 `;
 
@@ -20,7 +20,6 @@ const HeaderNav = styled.nav`
 	background-color: #31363f;
 	top: 0;
 	padding: 0 2rem;
-	margin-top: 10px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	border-radius: 24px;
 	& > ul {
@@ -32,13 +31,16 @@ const HeaderNav = styled.nav`
 			list-style: none;
 		}
 	}
+	@media screen and (max-width: 900px) {
+		padding: 0;
+	}
 `;
 
 const HeaderLink = styled.a<{ $active: boolean }>`
 	color: ${(props) => (props.$active ? "#76ABAE" : "lightsalmon")};
 	font-weight: ${(props) => (props.$active ? "bold" : "normal")};
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 13px;
 	position: relative;
 	display: inline-block;
 	transition: 0.3s ease;
@@ -67,14 +69,18 @@ function StoryNavbar() {
 	};
 
 	const nowPosition = (scrollPosition, sectionHeight) => {
-		if (scrollPosition + scrollPosition / 2 < sectionHeight) {
-			setActived(storyLinked[0].href);
-		} else if (scrollPosition + scrollPosition / 2 < sectionHeight * 2) {
-			setActived(storyLinked[1].href);
-		} else if (scrollPosition + scrollPosition / 3 < sectionHeight * 3) {
-			setActived(storyLinked[2].href);
+		if (sectionHeight > 600) {
+			if (scrollPosition + scrollPosition < sectionHeight) {
+				setActived(storyLinked[0].href);
+			} else if (scrollPosition + scrollPosition / 2 < sectionHeight * 2) {
+				setActived(storyLinked[1].href);
+			} else if (scrollPosition + scrollPosition / 3 < sectionHeight * 3) {
+				setActived(storyLinked[2].href);
+			} else {
+				setActived(storyLinked[3].href);
+			}
 		} else {
-			setActived(storyLinked[3].href);
+			setActived(null);
 		}
 	};
 

@@ -3,12 +3,20 @@ import { storyLinked } from "@/main";
 import styled from "styled-components";
 
 const StoryContainer = styled.div`
-	width: 70%;
+	width: 100%;
+	padding: 2rem;
+	@media screen and (max-width: 900px) {
+		padding: 1rem;
+	}
 `;
 
 export const SectionContainer = styled.section`
 	display: flex;
-	padding: 20px;
+	padding: 3rem;
+	margin: 30px 0;
+	@media screen and (max-width: 900px) {
+		padding: 0;
+	}
 	& > div {
 		width: 100%;
 		background-color: #31363f;
@@ -47,7 +55,7 @@ function Story() {
 			<StoryNavbar />
 			{storyLinked.map((item, idx) => {
 				return (
-					<SectionContainer id={item.href.replace(/^#/, "")}>
+					<SectionContainer key={idx} id={item.href.replace(/^#/, "")}>
 						<PPTContainer>
 							<h2>{item.name}</h2>
 							<img src={item.img} />

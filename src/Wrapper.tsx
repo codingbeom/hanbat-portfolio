@@ -14,7 +14,7 @@ const hoverAnimation = keyframes`
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-5px);
+        transform: translateY(-2.5px);
     }
 `;
 
@@ -85,6 +85,9 @@ function Wrapper({ children }: Props) {
 	};
 
 	useEffect(() => {
+		console.log(location.pathname);
+		console.log(import.meta.env.BASE_URL);
+
 		if (location.pathname === `/story`) {
 			document.addEventListener("scroll", handleScroll);
 
