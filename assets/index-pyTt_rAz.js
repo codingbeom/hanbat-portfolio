@@ -75,7 +75,7 @@ Error generating stack: `+o.message+`
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-5px);
+        transform: translateY(-2.5px);
     }
 `,_v=Fe.nav`
 	height: 60px;
@@ -190,7 +190,7 @@ Error generating stack: `+o.message+`
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-5px);
+        transform: translateY(-2.5px);
     }
 `,Dv=Fe.nav`
 	position: sticky;
@@ -200,7 +200,6 @@ Error generating stack: `+o.message+`
 	background-color: #31363f;
 	top: 0;
 	padding: 0 2rem;
-	margin-top: 10px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	border-radius: 24px;
 	& > ul {
@@ -212,22 +211,33 @@ Error generating stack: `+o.message+`
 			list-style: none;
 		}
 	}
+	@media screen and (max-width: 900px) {
+		padding: 0;
+	}
 `,Mv=Fe.a`
 	color: ${e=>e.$active?"#76ABAE":"lightsalmon"};
 	font-weight: ${e=>e.$active?"bold":"normal"};
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 13px;
 	position: relative;
 	display: inline-block;
 	transition: 0.3s ease;
 	&:hover {
 		animation: ${jv} 0.5s ease infinite alternate;
 	}
-`;function Fv(){const e=Xn(),[t,n]=_.useState("");function r(i){i.preventDefault();const u=i.target.getAttribute("href"),s=document.querySelector(u);s&&s.scrollIntoView({behavior:"smooth",block:"end"})}const l=()=>{const i=window.scrollY,u=document.querySelector("section").clientHeight;o(i,u)},o=(i,u)=>{i+i/2<u?n(dn[0].href):i+i/2<u*2?n(dn[1].href):i+i/3<u*3?n(dn[2].href):n(dn[3].href)};return _.useEffect(()=>{if(e.pathname==="/story")return l(),document.addEventListener("scroll",l),()=>{document.removeEventListener("scroll",l)}},[]),T.jsx(Dv,{onClick:r,children:T.jsx("ul",{children:dn.map((i,u)=>T.jsx("li",{children:T.jsx(Mv,{href:i.href,$active:i.href===t,children:i.name})},u))})})}const Av=Fe.div`
-	width: 70%;
+`;function Fv(){const e=Xn(),[t,n]=_.useState("");function r(i){i.preventDefault();const u=i.target.getAttribute("href"),s=document.querySelector(u);s&&s.scrollIntoView({behavior:"smooth",block:"end"})}const l=()=>{const i=window.scrollY,u=document.querySelector("section").clientHeight;o(i,u)},o=(i,u)=>{u>600?i+i<u?n(dn[0].href):i+i/2<u*2?n(dn[1].href):i+i/3<u*3?n(dn[2].href):n(dn[3].href):n(null)};return _.useEffect(()=>{if(e.pathname==="/story")return l(),document.addEventListener("scroll",l),()=>{document.removeEventListener("scroll",l)}},[]),T.jsx(Dv,{onClick:r,children:T.jsx("ul",{children:dn.map((i,u)=>T.jsx("li",{children:T.jsx(Mv,{href:i.href,$active:i.href===t,children:i.name})},u))})})}const Av=Fe.div`
+	width: 100%;
+	padding: 2rem;
+	@media screen and (max-width: 900px) {
+		padding: 1rem;
+	}
 `,Uv=Fe.section`
 	display: flex;
-	padding: 20px;
+	padding: 3rem;
+	margin: 30px 0;
+	@media screen and (max-width: 900px) {
+		padding: 0;
+	}
 	& > div {
 		width: 100%;
 		background-color: #31363f;
