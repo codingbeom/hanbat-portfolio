@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import styled, { keyframes } from 'styled-components';
 
 const Container = styled.div`
 	height: 100%;
@@ -41,8 +41,8 @@ const HeaderNav = styled.nav<{ $visible: boolean }>`
 `;
 
 const HeaderLink = styled(Link)<{ $active: boolean }>`
-	color: ${(props) => (props.$active ? "#76ABAE" : "lightsalmon")};
-	font-weight: ${(props) => (props.$active ? "bold" : "normal")};
+	color: ${(props) => (props.$active ? '#76ABAE' : 'lightsalmon')};
+	font-weight: ${(props) => (props.$active ? 'bold' : 'normal')};
 	text-decoration: none;
 	font-size: 16px;
 	position: relative;
@@ -59,12 +59,20 @@ interface Props {
 
 const linked = [
 	{
-		href: "/",
-		name: "Home",
+		href: '/',
+		name: 'Home',
 	},
 	{
-		href: "/story",
-		name: "Story",
+		href: '/story',
+		name: 'Story',
+	},
+	{
+		href: '/skill',
+		name: 'Skill',
+	},
+	{
+		href: '/contact',
+		name: 'Contact',
 	},
 ];
 
@@ -89,10 +97,10 @@ function Wrapper({ children }: Props) {
 		console.log(import.meta.env.BASE_URL);
 
 		if (location.pathname === `/story`) {
-			document.addEventListener("scroll", handleScroll);
+			document.addEventListener('scroll', handleScroll);
 
 			return () => {
-				document.removeEventListener("scroll", handleScroll);
+				document.removeEventListener('scroll', handleScroll);
 			};
 		}
 	}, []);

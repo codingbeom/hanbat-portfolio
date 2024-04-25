@@ -5,14 +5,18 @@
 	"type": "module",
 	"homepage": "https://codingbeom.github.io/hanbat-portfolio/",
 	"scripts": {
-		"dev": "vite",
+		"dev": "vite --host",
 		"build": "tsc && vite build",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
+		"framer-motion": "^11.1.7",
 		"react": "^18.2.0",
+		"react-bootstrap-icons": "^1.11.4",
+		"react-card-flip": "^1.2.2",
+		"react-circular-progressbar": "^2.1.0",
 		"react-dom": "^18.2.0",
 		"react-pro-sidebar": "^1.1.0",
 		"react-router-dom": "^6.22.3",

@@ -1,7 +1,4 @@
-import { storyLinked } from "@/main";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const hoverAnimation = keyframes`
     0% {
@@ -36,9 +33,9 @@ const HeaderNav = styled.nav`
 	}
 `;
 
-const HeaderLink = styled.a<{ $active: boolean }>`
-	color: ${(props) => (props.$active ? "#76ABAE" : "lightsalmon")};
-	font-weight: ${(props) => (props.$active ? "bold" : "normal")};
+const HeaderLink = styled.a`
+	color: #76abae;
+	font-weight: bold;
 	text-decoration: none;
 	font-size: 13px;
 	position: relative;
@@ -49,61 +46,32 @@ const HeaderLink = styled.a<{ $active: boolean }>`
 	}
 `;
 
-function StoryNavbar() {
-	const location = useLocation();
-	const [actived, setActived] = useState("");
+interface Props {
+	story: {
+		href: string;
+		name: string;
+		img: string;
+		flip: boolean;
+	}[];
+}
+
+function StoryNavbar({ story }: Props) {
 	function handleNavClick(event) {
 		event.preventDefault();
-		const targetId = event.target.getAttribute("href");
+		const targetId = event.target.getAttribute('href');
 		const targetElement: HTMLSelectElement = document.querySelector(targetId);
 		if (targetElement) {
-			targetElement.scrollIntoView({ behavior: "smooth", block: "end" });
+			targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		}
 	}
-
-	const handleScroll = () => {
-		const scrollPosition = window.scrollY;
-		const sectionHeight = document.querySelector("section").clientHeight;
-
-		nowPosition(scrollPosition, sectionHeight);
-	};
-
-	const nowPosition = (scrollPosition, sectionHeight) => {
-		if (sectionHeight > 600) {
-			if (scrollPosition + scrollPosition < sectionHeight) {
-				setActived(storyLinked[0].href);
-			} else if (scrollPosition + scrollPosition / 2 < sectionHeight * 2) {
-				setActived(storyLinked[1].href);
-			} else if (scrollPosition + scrollPosition / 3 < sectionHeight * 3) {
-				setActived(storyLinked[2].href);
-			} else {
-				setActived(storyLinked[3].href);
-			}
-		} else {
-			setActived(null);
-		}
-	};
-
-	useEffect(() => {
-		if (location.pathname === `/story`) {
-			handleScroll();
-			document.addEventListener("scroll", handleScroll);
-
-			return () => {
-				document.removeEventListener("scroll", handleScroll);
-			};
-		}
-	}, []);
 
 	return (
 		<HeaderNav onClick={handleNavClick}>
 			<ul>
-				{storyLinked.map((item, idx) => {
+				{story.map((item, idx) => {
 					return (
 						<li key={idx}>
-							<HeaderLink href={item.href} $active={item.href === actived}>
-								{item.name}
-							</HeaderLink>
+							<HeaderLink href={item.href}>{item.name}</HeaderLink>
 						</li>
 					);
 				})}
