@@ -1,166 +1,253 @@
-// // .skills .progress {
-// // 	height: 60px;
-// // 	display: block;
-// // 	background: none;
-// // 	border-radius: 0;
-// // }
-// // .skills .progress .skill {
-// // 	padding: 0;
-// // 	margin: 0 0 6px 0;
-// // 	text-transform: uppercase;
-// // 	display: block;
-// // 	font-weight: 600;
-// // 	font-family: "Poppins", sans-serif;
-// // 	color: #050d18;
-// // }
-// // .skills .progress .skill .val {
-// // 	float: right;
-// // 	font-style: normal;
-// // }
-// // .skills .progress-bar-wrap {
-// // 	background: #dce8f8;
-// // 	height: 10px;
-// // }
-// // .skills .progress-bar {
-// // 	width: 1px;
-// // 	height: 10px;
-// // 	transition: 0.9s;
-// // 	background-color: #149ddd;
-// }
+import { motion } from 'framer-motion';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import styled from 'styled-components';
+
+const Section = styled(motion.section)`
+	padding: 40px 0;
+`;
+
+const Container = styled.div`
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+`;
+
+const Title = styled.div`
+	text-align: center;
+	margin-bottom: 30px;
+
+	h2 {
+		font-size: 36px;
+		color: #76abaa;
+		margin-bottom: 10px;
+	}
+`;
+
+const InfoRow = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	& > h3 {
+		font-size: 22px;
+		margin-bottom: 5px;
+	}
+`;
+
+const InfoBox = styled.div`
+	flex: 0.25;
+	margin: 15px 15px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	& > h3 {
+		font-size: 22px;
+		margin-bottom: 5px;
+	}
+`;
+
+const ProgressBox = styled.div`
+	width: 150px;
+	height: 150px;
+`;
 
 function Skill() {
-	return <></>;
-	// 	return <section id="skills" className="skills section-bg">
-	//   <div className="container">
-	//     <div className="section-title">
-	//       <h2>Skills</h2>
-	//       <p></p>
-	//     </div>
-	//     <div className="row skills-content">
-	//       <div className="col-lg-6" data-aos="fade-up">
-	//         <div className="progress">
-	//           <span className="skill">Html5 <i className="val">90%</i></span>
-	//           <div className="progress-bar-wrap" style={{borderRadius: "5px"}}>
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="90"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #ff0060"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//         <div className="progress">
-	//           <span className="skill">CSS3 <i className="val">80%</i></span>
-	//           <div className="progress-bar-wrap" style="border-radius: 5px">
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="80"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #ff8400"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//         <div className="progress">
-	//           <span className="skill">JavaScript <i className="val">80%</i></span>
-	//           <div className="progress-bar-wrap" style="border-radius: 5px">
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="80"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #f6fa70"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//         <div className="progress">
-	//           <span className="skill">TypeScript <i className="val">80%</i></span>
-	//           <div className="progress-bar-wrap" style="border-radius: 5px">
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="80"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #00dfa2"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//       </div>
-	//       <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-	//         <div className="progress">
-	//           <span className="skill">Vue.js3 <i className="val">90%</i></span>
-	//           <div className="progress-bar-wrap" style="border-radius: 5px">
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="90"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #0079ff"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//         <div className="progress">
-	//           <span className="skill">React.js3 <i className="val">80%</i></span>
-	//           <div className="progress-bar-wrap" style="border-radius: 5px">
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="80"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #060047"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//         <div className="progress">
-	//           <span className="skill">Nginx<i className="val">60%</i></span>
-	//           <div className="progress-bar-wrap" style="border-radius: 5px">
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="60"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #3f0071"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//         <div className="progress">
-	//           <span className="skill">Python <i className="val">60%</i></span>
-	//           <div className="progress-bar-wrap" style="border-radius: 5px">
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="60"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #4f200d"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//         <div className="progress">
-	//           <span className="skill">Flutter <i className="val">60%</i></span>
-	//           <div className="progress-bar-wrap" style="border-radius: 5px">
-	//             <div
-	//               className="progress-bar"
-	//               role="progressbar"
-	//               aria-valuenow="60"
-	//               aria-valuemin="0"
-	//               aria-valuemax="100"
-	//               style="border-radius: 5px; background-color: #000000"
-	//             ></div>
-	//           </div>
-	//         </div>
-	//       </div>
-	//     </div>
-	//   </div>
-	// </section>;
+	return (
+		<Section
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: false }}
+			transition={{
+				ease: 'easeInOut',
+				duration: 2,
+				y: { duration: 1 },
+			}}
+		>
+			<Container>
+				<Title>
+					<h2>Skill</h2>
+				</Title>
+				<InfoRow>
+					<InfoBox>
+						<h3>Html5</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.9}
+								maxValue={1}
+								text={`${0.9 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#ff0060',
+									textColor: '#ff0060',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>Css3</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.8}
+								maxValue={1}
+								text={`${0.8 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#4900ff',
+									textColor: '#4900ff',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>TypeScript</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.8}
+								maxValue={1}
+								text={`${0.8 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#0000ff',
+									textColor: '#0000ff',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>Flutter</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.7}
+								maxValue={1}
+								text={`${0.7 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#0079ff',
+									textColor: '#0079ff',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+				</InfoRow>
+				<InfoRow>
+					<InfoBox>
+						<h3>Vue3</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.7}
+								maxValue={1}
+								text={`${0.7 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#00ff00',
+									textColor: '#00ff00',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>React</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.9}
+								maxValue={1}
+								text={`${0.9 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#00ffff',
+									textColor: '#00ffff',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>Python</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.3}
+								maxValue={1}
+								text={`${0.3 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#1A4D2E',
+									textColor: '#1A4D2E',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>Vite</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.6}
+								maxValue={1}
+								text={`${0.6 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#ff00ff',
+									textColor: '#ff00ff',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+				</InfoRow>
+				<InfoRow>
+					<InfoBox>
+						<h3>Nginx</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.5}
+								maxValue={1}
+								text={`${0.5 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#00aa00',
+									textColor: '#00aa00',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>MySql</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.3}
+								maxValue={1}
+								text={`${0.3 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#007777',
+									textColor: '#007777',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>Ubuntu</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.4}
+								maxValue={1}
+								text={`${0.4 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#883300',
+									textColor: '#883300',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>Electron.js</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.7}
+								maxValue={1}
+								text={`${0.7 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#777777',
+									textColor: '#777777',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+				</InfoRow>
+			</Container>
+		</Section>
+	);
 }
 
 export default Skill;

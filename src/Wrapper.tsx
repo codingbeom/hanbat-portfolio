@@ -63,12 +63,16 @@ const linked = [
 		name: 'Home',
 	},
 	{
-		href: '/story',
-		name: 'Story',
+		href: '/project',
+		name: 'Project',
 	},
 	{
 		href: '/skill',
 		name: 'Skill',
+	},
+	{
+		href: '/story',
+		name: 'Story',
 	},
 	{
 		href: '/contact',

@@ -50,4 +50,19 @@ export const GlobalStyleProvider = styled.createGlobalStyle`
 	html ::-webkit-scrollbar-track {
 		background: transparent;
 	}
+	.slick-slide {
+		& > div {
+			& > div {
+				height: 60vh;
+				& > h1 {
+					text-align: center;
+				}
+			}
+		}
+		& img {
+			object-fit: fill;
+			width: 100%;
+			height: 60vh;
+		}
+	}
 `;

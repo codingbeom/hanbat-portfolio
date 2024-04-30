@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-const ResumeSection = styled.section`
+const ResumeSection = styled(motion.section)`
 	padding: 40px 0;
 `;
 
@@ -119,7 +120,16 @@ const ResumeItem = styled.div<{ $isFirst?: boolean }>`
 
 function Home() {
 	return (
-		<ResumeSection>
+		<ResumeSection
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: false }}
+			transition={{
+				ease: 'easeInOut',
+				duration: 2,
+				y: { duration: 1 },
+			}}
+		>
 			<Container>
 				<SectionTitle>
 					<h2>Career</h2>

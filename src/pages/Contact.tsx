@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import { Envelope, GeoAlt, Phone } from 'react-bootstrap-icons';
 import styled from 'styled-components';
 
-const Section = styled.section`
+const Section = styled(motion.section)`
 	padding: 40px 0;
 `;
 
@@ -79,7 +80,16 @@ const MapContainer = styled.div`
 
 function Contact() {
 	return (
-		<Section id="contact">
+		<Section
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: false }}
+			transition={{
+				ease: 'easeInOut',
+				duration: 2,
+				y: { duration: 1 },
+			}}
+		>
 			<Container>
 				<Title>
 					<h2>Contact</h2>

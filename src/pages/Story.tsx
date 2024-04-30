@@ -3,12 +3,13 @@ import { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
 import Chapter1 from '../assets/images/001.png';
 import Chapter2 from '../assets/images/002.png';
 import Chapter3 from '../assets/images/003.png';
 import Chapter4 from '../assets/images/004.png';
 
-const StoryContainer = styled.div`
+const StoryContainer = styled(motion.div)`
 	width: 100%;
 	padding: 20px;
 `;
@@ -96,7 +97,16 @@ function Story() {
 	};
 
 	return (
-		<StoryContainer>
+		<StoryContainer
+			initial={{ opacity: 0, y: 100 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: false }}
+			transition={{
+				ease: 'easeInOut',
+				duration: 2,
+				y: { duration: 1 },
+			}}
+		>
 			<StoryNavbar story={story} />
 			{story.map((item, idx) => (
 				<ReactCardFlip

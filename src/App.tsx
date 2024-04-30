@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Wrapper from './Wrapper';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Project from './pages/Project';
 import Skill from './pages/Skill';
 import Story from './pages/Story';
 
@@ -14,6 +15,7 @@ function App() {
 					<Route path="/story" element={Story()} />
 					<Route path="/skill" element={Skill()} />
 					<Route path="/contact" element={Contact()} />
+					<Route path="/project" element={Project()} />
 				</Routes>
 			</Wrapper>
 		</>
