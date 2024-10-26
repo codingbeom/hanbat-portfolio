@@ -262,6 +262,8 @@ function Home() {
 								<li>
 									Flutter를 사용해 크로스플랫폼 어플리케이션 개발 및 유지보수
 								</li>
+								<li>Python을 활용한 Crawling및 음성인식 엔진 서버 구축</li>
+								<li>Bun.js(Ts) + Hono + MySql + Redis 웹 서버 구축</li>
 							</ul>
 						</ResumeItem>
 					</Col>

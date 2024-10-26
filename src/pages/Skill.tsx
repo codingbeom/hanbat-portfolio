@@ -80,8 +80,8 @@ function Skill() {
 								maxValue={1}
 								text={`${0.9 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#ff0060',
-									textColor: '#ff0060',
+									pathColor: '#E44D26', // HTML5 브랜드 컬러
+									textColor: '#E44D26',
 								})}
 							/>
 						</ProgressBox>
@@ -94,8 +94,8 @@ function Skill() {
 								maxValue={1}
 								text={`${0.8 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#4900ff',
-									textColor: '#4900ff',
+									pathColor: '#264DE4', // CSS3 브랜드 컬러
+									textColor: '#264DE4',
 								})}
 							/>
 						</ProgressBox>
@@ -108,8 +108,8 @@ function Skill() {
 								maxValue={1}
 								text={`${0.8 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#0000ff',
-									textColor: '#0000ff',
+									pathColor: '#3178C6', // TypeScript 브랜드 컬러
+									textColor: '#3178C6',
 								})}
 							/>
 						</ProgressBox>
@@ -122,8 +122,8 @@ function Skill() {
 								maxValue={1}
 								text={`${0.7 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#0079ff',
-									textColor: '#0079ff',
+									pathColor: '#02569B', // Flutter 브랜드 컬러
+									textColor: '#02569B',
 								})}
 							/>
 						</ProgressBox>
@@ -138,8 +138,8 @@ function Skill() {
 								maxValue={1}
 								text={`${0.7 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#00ff00',
-									textColor: '#00ff00',
+									pathColor: '#42B883', // Vue.js 브랜드 컬러
+									textColor: '#42B883',
 								})}
 							/>
 						</ProgressBox>
@@ -152,8 +152,8 @@ function Skill() {
 								maxValue={1}
 								text={`${0.9 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#00ffff',
-									textColor: '#00ffff',
+									pathColor: '#61DAFB', // React 브랜드 컬러
+									textColor: '#61DAFB',
 								})}
 							/>
 						</ProgressBox>
@@ -162,12 +162,12 @@ function Skill() {
 						<h3>Python</h3>
 						<ProgressBox>
 							<CircularProgressbar
-								value={0.3}
+								value={0.8}
 								maxValue={1}
-								text={`${0.3 * 100}%`}
+								text={`${0.8 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#1A4D2E',
-									textColor: '#1A4D2E',
+									pathColor: '#3776AB', // Python 브랜드 컬러
+									textColor: '#3776AB',
 								})}
 							/>
 						</ProgressBox>
@@ -180,8 +180,8 @@ function Skill() {
 								maxValue={1}
 								text={`${0.6 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#ff00ff',
-									textColor: '#ff00ff',
+									pathColor: '#646CFF', // Vite 브랜드 컬러
+									textColor: '#646CFF',
 								})}
 							/>
 						</ProgressBox>
@@ -196,8 +196,8 @@ function Skill() {
 								maxValue={1}
 								text={`${0.5 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#00aa00',
-									textColor: '#00aa00',
+									pathColor: '#009639', // Nginx 브랜드 컬러
+									textColor: '#009639',
 								})}
 							/>
 						</ProgressBox>
@@ -206,12 +206,12 @@ function Skill() {
 						<h3>MySql</h3>
 						<ProgressBox>
 							<CircularProgressbar
-								value={0.3}
+								value={0.6}
 								maxValue={1}
-								text={`${0.3 * 100}%`}
+								text={`${0.6 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#007777',
-									textColor: '#007777',
+									pathColor: '#4479A1', // MySQL 브랜드 컬러
+									textColor: '#4479A1',
 								})}
 							/>
 						</ProgressBox>
@@ -220,12 +220,12 @@ function Skill() {
 						<h3>Ubuntu</h3>
 						<ProgressBox>
 							<CircularProgressbar
-								value={0.4}
+								value={0.7}
 								maxValue={1}
-								text={`${0.4 * 100}%`}
+								text={`${0.7 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#883300',
-									textColor: '#883300',
+									pathColor: '#E95420', // Ubuntu 브랜드 컬러
+									textColor: '#E95420',
 								})}
 							/>
 						</ProgressBox>
@@ -238,8 +238,52 @@ function Skill() {
 								maxValue={1}
 								text={`${0.7 * 100}%`}
 								styles={buildStyles({
-									pathColor: '#777777',
-									textColor: '#777777',
+									pathColor: '#47848F', // Electron 브랜드 컬러
+									textColor: '#47848F',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+				</InfoRow>
+				<InfoRow>
+					<InfoBox>
+						<h3>Node.js</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.8}
+								maxValue={1}
+								text={`${0.8 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#339933', // Node.js 공식 브랜드 컬러
+									textColor: '#339933',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>Bun.js</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.5}
+								maxValue={1}
+								text={`${0.5 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#FBF0DF', // Bun 브랜드 컬러
+									textColor: '#FBF0DF',
+								})}
+							/>
+						</ProgressBox>
+					</InfoBox>
+					<InfoBox>
+						<h3>Redis</h3>
+						<ProgressBox>
+							<CircularProgressbar
+								value={0.6}
+								maxValue={1}
+								text={`${0.6 * 100}%`}
+								styles={buildStyles({
+									pathColor: '#DC382D', // Redis 브랜드 컬러
+									textColor: '#DC382D',
 								})}
 							/>
 						</ProgressBox>

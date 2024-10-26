@@ -78,6 +78,10 @@ const linked = [
 		href: '/contact',
 		name: 'Contact',
 	},
+	{
+		href: '/puzzle',
+		name: 'Puzzle',
+	},
 ];
 
 function Wrapper({ children }: Props) {
@@ -98,8 +102,6 @@ function Wrapper({ children }: Props) {
 
 	useEffect(() => {
 		console.log(location.pathname);
-		console.log(import.meta.env.BASE_URL);
-
 		if (location.pathname === `/story`) {
 			document.addEventListener('scroll', handleScroll);
 
