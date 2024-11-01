@@ -20,6 +20,8 @@
 		"react-circular-progressbar": "^2.1.0",
 		"react-dnd": "^16.0.1",
 		"react-dnd-html5-backend": "^16.0.1",
+		"react-dnd-multi-backend": "^8.0.3",
+		"react-dnd-touch-backend": "^16.0.1",
 		"react-dom": "^18.2.0",
 		"react-drag-drop-files": "^2.4.0",
 		"react-pro-sidebar": "^1.1.0",

@@ -1,7 +1,10 @@
+// Puzzle.tsx
 import PuzzleTile from '@/components/PuzzleTile';
 import { useEffect, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { MultiBackend, TouchTransition } from 'react-dnd-multi-backend';
+import { TouchBackend } from 'react-dnd-touch-backend';
 import { FileUploader } from 'react-drag-drop-files';
 import styled from 'styled-components';
 
@@ -58,6 +61,7 @@ const PuzzleGrid = styled.div<{ $size: number }>`
 	grid-template-rows: ${(props) => `repeat(${props.$size}, 1fr)`};
 	gap: 1px;
 	background: #333;
+	touch-action: none;
 `;
 
 const OriginalImage = styled.img`
@@ -97,6 +101,21 @@ const Button = styled.button`
 `;
 
 const fileTypes = ['JPEG', 'PNG', 'JPG'];
+
+const HTML5toTouch = {
+	backends: [
+		{
+			backend: HTML5Backend,
+			preview: true,
+		},
+		{
+			backend: TouchBackend,
+			options: { enableMouseEvents: true },
+			preview: true,
+			transition: TouchTransition,
+		},
+	],
+};
 
 type Difficulty = {
 	size: number;
@@ -222,6 +241,7 @@ function Puzzle() {
 						<FileUploader
 							classes="dnd"
 							onSizeError={() => alert('파일 사이즈가 너무 큽니다(2MB)')}
+							handleChange={onDrop}
 							onDrop={onDrop}
 							name="file"
 							types={fileTypes}
@@ -230,7 +250,7 @@ function Puzzle() {
 							required={true}
 						/>
 					) : (
-						<DndProvider backend={HTML5Backend}>
+						<DndProvider backend={MultiBackend} options={HTML5toTouch}>
 							<PuzzleGrid $size={difficulty.size}>
 								{pieces.map((piece) => (
 									<PuzzleTile
