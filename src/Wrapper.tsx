@@ -82,6 +82,10 @@ const linked = [
 		href: '/puzzle',
 		name: 'Puzzle',
 	},
+	{
+		href: '/presentation',
+		name: 'PPT',
+	},
 ];
 
 function Wrapper({ children }: Props) {

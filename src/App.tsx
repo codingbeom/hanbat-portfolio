@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Wrapper from './Wrapper';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Presentation from './pages/Presentation';
 import Project from './pages/Project';
 import Puzzle from './pages/Puzzle';
 import Skill from './pages/Skill';
@@ -18,6 +19,7 @@ function App() {
 					<Route path="/contact" element={Contact()} />
 					<Route path="/project" element={Project()} />
 					<Route path="/puzzle" element={Puzzle()} />
+					<Route path="/presentation" element={<Presentation />} />
 				</Routes>
 			</Wrapper>
 		</>
