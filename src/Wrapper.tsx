@@ -86,6 +86,10 @@ const linked = [
 		href: '/presentation',
 		name: 'PPT',
 	},
+	{
+		href: '/nosql',
+		name: 'MongoDB',
+	},
 ];
 
 function Wrapper({ children }: Props) {
