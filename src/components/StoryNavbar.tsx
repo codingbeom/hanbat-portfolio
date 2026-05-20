@@ -10,7 +10,6 @@ const HeaderNav = styled.nav`
 	position: sticky;
 	z-index: 10;
 	width: 100%;
-	height: 52px;
 	background: rgba(42, 47, 55, 0.85);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -65,6 +64,11 @@ const HeaderLink = styled.a<{ $flipped?: boolean }>`
 		font-size: 11px;
 		padding: 5px 6px;
 		gap: 4px;
+	}
+	@media screen and (max-width: 400px) {
+		font-size: 9px;
+		padding: 3px 4px;
+		gap: 2px;
 	}
 `;
 

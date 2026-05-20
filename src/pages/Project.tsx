@@ -57,6 +57,10 @@ const SlickGlobal = createGlobalStyle`
 		.slick-prev, .slick-next, .slick-next::before, .slick-prev::before {
 			display: none;
 		}
+		.slick-slide img {
+			object-fit: cover;
+			object-position: center;
+		}
   }
 `;
 
@@ -91,15 +95,15 @@ const TitleWrap = styled.div`
 
 const GradientTitle = styled.h2`
 	font-size: 32px;
-	font-weight: 800;
-	letter-spacing: 0.14em;
+	font-weight: 700;
+	letter-spacing: 0.12em;
 	text-transform: uppercase;
 	background: linear-gradient(90deg, #76abae, #a8d8da, #76abae);
 	background-size: 200% auto;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	animation: ${shimmer} 3.5s linear infinite;
-	margin-bottom: 6px;
+	animation: ${shimmer} 3s linear infinite;
+	margin-bottom: 8px;
 `;
 
 const Subtitle = styled.p`
@@ -127,6 +131,14 @@ const ImageWrap = styled.div`
 	justify-content: center;
 
 	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: center;
+		display: block;
+		transition: transform 0.4s ease;
+	}
+	.slick-slide img {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;

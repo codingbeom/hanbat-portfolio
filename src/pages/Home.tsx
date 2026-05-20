@@ -133,16 +133,16 @@ const Intro = styled.div`
 `;
 
 const GradientTitle = styled.h2`
-	font-size: 34px;
-	font-weight: 800;
-	letter-spacing: 0.14em;
+	font-size: 32px;
+	font-weight: 700;
+	letter-spacing: 0.12em;
 	text-transform: uppercase;
 	background: linear-gradient(90deg, #76abae, #a8d8da, #76abae);
 	background-size: 200% auto;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	animation: ${shimmer} 3.5s linear infinite;
-	margin-bottom: 32px;
+	animation: ${shimmer} 3s linear infinite;
+	margin-bottom: 8px;
 `;
 
 const ProfileCard = styled.div`

@@ -6,7 +6,12 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { MultiBackend, TouchTransition } from 'react-dnd-multi-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import { FileUploader } from 'react-drag-drop-files';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const shimmer = keyframes`
+	0%   { background-position: -200% center; }
+	100% { background-position:  200% center; }
+`;
 
 const PuzzleContainer = styled.div`
 	width: 100%;
@@ -36,32 +41,37 @@ const PuzzleBox = styled.div`
 		flex-direction: row;
 		align-items: flex-start;
 	}
+	.dnd {
+		max-width: 400px;
+		max-height: 400px;
+		width: 100%;
+		height: 100%;
+	}
 `;
 
 const Title = styled.div`
-	margin-bottom: 24px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
 	h2 {
-		font-size: 42px;
-		font-weight: 800;
-		letter-spacing: -1px;
-
-		background: linear-gradient(90deg, #10b981, #14b8a6, #3b82f6);
-
+		font-size: 32px;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		background: linear-gradient(90deg, #76abae, #a8d8da, #76abae);
+		background-size: 200% auto;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-
-		margin-bottom: 16px;
+		animation: ${shimmer} 3s linear infinite;
+		margin-bottom: 8px;
 	}
 `;
 
 const ButtonContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	gap: 14px;
+	gap: 8px;
 	justify-content: center;
 `;
 
@@ -310,7 +320,7 @@ function Puzzle() {
 		<PuzzleContainer>
 			<SectionContainer>
 				<Title>
-					<h2>Puzzle</h2>
+					{!file && <h2>Puzzle</h2>}
 					{!file ? (
 						<ButtonContainer>
 							{difficulties.map((diff) => (
