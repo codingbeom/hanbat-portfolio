@@ -12,21 +12,19 @@ import SupabasePPT from './pages/Supabase/SupabasePPT';
 
 function App() {
 	return (
-		<>
-			<Wrapper>
-				<Routes>
-					<Route index path="/" element={Home()} />
-					<Route path="/story" element={Story()} />
-					<Route path="/skill" element={Skill()} />
-					<Route path="/contact" element={Contact()} />
-					<Route path="/project" element={Project()} />
-					<Route path="/puzzle" element={Puzzle()} />
-					<Route path="/presentation" element={<Presentation />} />
-					<Route path="/nosql" element={<NoSqlPPT />} />
-					<Route path="/supa" element={<SupabasePPT />} />
-				</Routes>
-			</Wrapper>
-		</>
+		<Wrapper>
+			<Routes>
+				<Route index path="/" element={Home()} />
+				<Route path="/story" element={Story()} />
+				<Route path="/skill" element={Skill()} />
+				<Route path="/contact" element={Contact()} />
+				<Route path="/project" element={Project()} />
+				<Route path="/puzzle" element={Puzzle()} />
+				<Route path="/presentation" element={<Presentation />} />
+				<Route path="/nosql" element={<NoSqlPPT />} />
+				<Route path="/supa" element={<SupabasePPT />} />
+			</Routes>
+		</Wrapper>
 	);
 }
 
