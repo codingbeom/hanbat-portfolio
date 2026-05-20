@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 const PuzzleContainer = styled.div`
 	width: 100%;
-	padding: 40px;
+	padding: 60px 24px;
 `;
 
 const SectionContainer = styled.div`
@@ -27,76 +27,169 @@ const PuzzleBox = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 24px;
+
+	padding: 28px;
+	border-radius: 28px;
 
 	@media (min-width: 950px) {
 		flex-direction: row;
-		align-items: flex-end;
+		align-items: flex-start;
 	}
 `;
 
 const Title = styled.div`
-	margin-bottom: 10px;
+	margin-bottom: 24px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
 	h2 {
-		font-size: 36px;
-		color: #76abaa;
-		margin-bottom: 10px;
+		font-size: 42px;
+		font-weight: 800;
+		letter-spacing: -1px;
+
+		background: linear-gradient(90deg, #10b981, #14b8a6, #3b82f6);
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		margin-bottom: 16px;
 	}
 `;
 
 const ButtonContainer = styled.div`
 	display: flex;
-	gap: 15px;
-	margin-bottom: 20px;
+	flex-wrap: wrap;
+	gap: 14px;
+	justify-content: center;
 `;
 
 const PuzzleGrid = styled.div<{ $size: number }>`
 	width: 400px;
 	height: 400px;
+
 	display: grid;
 	grid-template-columns: ${(props) => `repeat(${props.$size}, 1fr)`};
 	grid-template-rows: ${(props) => `repeat(${props.$size}, 1fr)`};
-	gap: 1px;
-	background: #333;
+
+	gap: 2px;
+
+	padding: 8px;
+
+	border-radius: 22px;
+
+	background: linear-gradient(135deg, #14b8a6, #3b82f6);
+
+	box-shadow:
+		0 10px 30px rgba(59, 130, 246, 0.18),
+		0 4px 12px rgba(16, 185, 129, 0.12);
+
 	touch-action: none;
+
+	overflow: hidden;
+
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+
+	&:hover {
+		transform: translateY(-4px);
+
+		box-shadow:
+			0 20px 40px rgba(59, 130, 246, 0.24),
+			0 10px 20px rgba(16, 185, 129, 0.18);
+	}
+
+	@media (max-width: 500px) {
+		width: 320px;
+		height: 320px;
+	}
 `;
 
 const OriginalImage = styled.img`
 	width: 400px;
 	height: 400px;
-	margin-top: 20px;
 
-	@media (min-width: 950px) {
-		margin-left: 20px;
+	object-fit: cover;
+
+	border-radius: 22px;
+
+	border: 4px solid rgba(255, 255, 255, 0.8);
+
+	box-shadow:
+		0 12px 30px rgba(15, 23, 42, 0.12),
+		0 4px 12px rgba(59, 130, 246, 0.08);
+
+	transition:
+		transform 0.35s ease,
+		box-shadow 0.35s ease;
+
+	&:hover {
+		transform: scale(1.02);
+
+		box-shadow:
+			0 20px 40px rgba(15, 23, 42, 0.16),
+			0 8px 20px rgba(16, 185, 129, 0.12);
+	}
+
+	@media (max-width: 500px) {
+		width: 320px;
+		height: 320px;
 	}
 `;
 
 const Button = styled.button`
-	padding: 10px 20px;
-	font-size: 16px;
-	font-weight: bold;
-	color: black;
-	background-color: #76abaa;
+	padding: 12px 22px;
+
+	font-size: 15px;
+	font-weight: 700;
+
+	color: #0f172a;
+
 	border: none;
-	border-radius: 5px;
+	border-radius: 14px;
+
+	background: rgba(255, 255, 255, 0.8);
+
+	backdrop-filter: blur(8px);
+
+	box-shadow:
+		0 4px 10px rgba(15, 23, 42, 0.06),
+		0 2px 4px rgba(15, 23, 42, 0.04);
+
 	cursor: pointer;
-	transition: background-color 0.3s, transform 0.2s;
+
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.25s ease,
+		background 0.25s ease,
+		color 0.25s ease;
 
 	&:hover {
-		background-color: #649ea1;
-		transform: scale(1.05);
+		transform: translateY(-2px);
+
+		background: linear-gradient(90deg, #10b981, #14b8a6, #3b82f6);
+
+		color: white;
+
+		box-shadow:
+			0 10px 20px rgba(16, 185, 129, 0.18),
+			0 4px 10px rgba(59, 130, 246, 0.14);
 	}
 
 	&:active {
-		transform: scale(0.95);
+		transform: scale(0.96);
 	}
 
 	&.active {
-		background-color: #4a7cff;
+		background: linear-gradient(90deg, #10b981, #14b8a6, #3b82f6);
+
 		color: white;
+
+		box-shadow:
+			0 10px 20px rgba(16, 185, 129, 0.2),
+			0 4px 10px rgba(59, 130, 246, 0.16);
 	}
 `;
 

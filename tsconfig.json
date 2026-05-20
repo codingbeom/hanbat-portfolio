@@ -1,9 +1,8 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
 		"paths": {
-			"@/*": ["src/*"],
-			"&/*": ["src/aseets/images/*"]
+			"@/*": ["./src/*"],
+			"&/*": ["./src/assets/images/*"]
 		},
 		"target": "ES2020",
 		"useDefineForClassFields": true,

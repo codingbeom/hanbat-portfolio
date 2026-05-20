@@ -8,11 +8,7 @@ const WhatIsNoSQL: React.FC = () => (
 			<p>
 				💡 <strong>Not Only SQL</strong>
 				<br />
-				관계형 데이터베이스의
-				<br />
-				한계를 극복한
-				<br />
-				비관계형 데이터베이스
+				관계형 데이터베이스의 한계를 극복한 비관계형 데이터베이스
 			</p>
 		</HighlightBox>
 		<ContentBox>

@@ -8,6 +8,7 @@ import Project from './pages/Project';
 import Puzzle from './pages/Puzzle';
 import Skill from './pages/Skill';
 import Story from './pages/Story';
+import SupabasePPT from './pages/Supabase/SupabasePPT';
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 					<Route path="/puzzle" element={Puzzle()} />
 					<Route path="/presentation" element={<Presentation />} />
 					<Route path="/nosql" element={<NoSqlPPT />} />
+					<Route path="/supa" element={<SupabasePPT />} />
 				</Routes>
 			</Wrapper>
 		</>

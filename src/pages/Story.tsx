@@ -22,37 +22,97 @@ export const SectionContainer = styled.section`
 `;
 
 const PPTContainer = styled.div`
+	position: relative;
 	width: 100%;
 	max-width: 1100px;
 	min-height: 700px;
-	border: 1px solid #ccc;
-	border-radius: 10px;
 	overflow: hidden;
+
+	border-radius: 24px;
+	background: #ffffff;
+	border: 1px solid rgba(16, 185, 129, 0.12);
+
+	box-shadow:
+		0 10px 30px rgba(15, 23, 42, 0.08),
+		0 4px 12px rgba(59, 130, 246, 0.06);
+
 	cursor: pointer;
-	transition: transform 0.3s ease-in-out;
+
+	transition:
+		transform 0.35s ease,
+		box-shadow 0.35s ease,
+		border-color 0.35s ease;
+
+	backdrop-filter: blur(10px);
 
 	&:hover {
-		transform: scale(1.02);
+		transform: translateY(-6px) scale(1.01);
+
+		border-color: rgba(59, 130, 246, 0.28);
+
+		box-shadow:
+			0 24px 50px rgba(15, 23, 42, 0.14),
+			0 10px 24px rgba(16, 185, 129, 0.12);
 	}
 
+	/* top gradient accent */
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 5px;
+
+		z-index: 2;
+	}
+
+	/* content wrapper */
 	& > div {
+		position: relative;
 		height: 100%;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		padding: 24px;
+
+		background: linear-gradient(90deg, #10b981, #14b8a6, #3b82f6);
 	}
 
+	/* image */
 	& > img {
 		width: 100%;
 		height: 100%;
-		object-fit: fill;
+		object-fit: cover;
+
+		transition:
+			transform 0.5s ease,
+			filter 0.35s ease;
+	}
+
+	&:hover > img {
+		transform: scale(1.03);
+		filter: brightness(1.03);
 	}
 
 	@media screen and (max-width: 900px) {
-		min-height: 400px;
+		min-height: 450px;
+		border-radius: 18px;
+
+		& > div {
+			padding: 18px;
+		}
 	}
+
 	@media screen and (max-width: 500px) {
 		min-height: 300px;
+		border-radius: 14px;
+
+		& > div {
+			padding: 12px;
+		}
 	}
 `;
 
